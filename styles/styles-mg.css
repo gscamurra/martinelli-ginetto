@@ -8,4 +8,8 @@ footer {
 
 .header.block {
     background: #000 !important;
-} 
+}
+
+header nav .nav-brand img {
+    width: 220px;
+}
