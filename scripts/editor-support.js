@@ -6,10 +6,9 @@ import {
   decorateSections,
   loadBlock,
   loadBlocks,
-} from './lib-franklin.js';
+} from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
-import { updateButtons } from '../blocks/carousel/carousel.js';
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
@@ -89,23 +88,11 @@ async function applyChanges(event) {
   return false;
 }
 
-function updateUi(event) {
-  const { detail, target } = event;
-  if (!detail.selected) return;
-
-  function handleSelectTabItem(tabItem) {
-    const index = tabItem.getAttribute('data-tab-index');
-    const button = tabItem.closest('.tabs-container').querySelector(`button[data-tab-index="${index}"]`);
-    button.click();
-  }
-  
-  function handleSelectSlide(slide) {
-    slide.parentElement.scrollTo({ top: 0, left: slide.offsetLeft - slide.parentNode.offsetLeft, behavior: 'instant' });
-    updateButtons(slide);
-  }
-
-  if (target.closest('.tab-item')) handleSelectTabItem(target.closest('.tab-item'));
-  if (target.closest('.slide')) handleSelectSlide(target.closest('.slide'));
+function handleReloadPage(event) {
+  const a = document.createElement('a');
+  a.setAttribute('href', event.detail);
+  event.target.append(a);
+  a.click();
 }
 
 function attachEventListners(main) {
@@ -121,7 +108,7 @@ function attachEventListners(main) {
     if (!applied) window.location.reload();
   }));
 
-  main.addEventListener('aue:ui-select', updateUi);
+  main.addEventListener('extension:reloadPage', handleReloadPage);
 }
 
 attachEventListners(document.querySelector('main'));
