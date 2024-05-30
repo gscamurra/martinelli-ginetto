@@ -11,5 +11,5 @@ footer {
 }
 
 header nav .nav-brand img {
-    width: 220px;
+    width: 220px !important;
 }
