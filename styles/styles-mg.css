@@ -5,3 +5,7 @@ main .section {
 footer {
     margin-top: 0;
 }
+
+.header.block {
+    background: #000;
+}
