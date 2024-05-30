@@ -1,3 +1,5 @@
+--nav-height: 91px;
+
 main .section {
     background: #FFF;
 }
@@ -8,6 +10,7 @@ footer {
 
 .header.block {
     background: #000 !important;
+    height: 90 !important;
 }
 
 header nav .nav-brand img {
