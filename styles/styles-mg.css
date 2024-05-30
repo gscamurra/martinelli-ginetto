@@ -11,5 +11,11 @@ footer {
 }
 
 header nav .nav-brand img {
-    width: 220px !important;
+    width: 230px !important;
+}
+
+@media (min-width: 1000px) {
+    header nav .nav-brand {
+        flex: 0 0 230px !important;
+    }
 }
