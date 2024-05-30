@@ -1,8 +1,8 @@
 {
   "mappings": [
-    "/content/xsc-xwalk-site/:/",
-    "/content/xsc-xwalk-site/metadata.json:/metadata.json",
-    "/content/xsc-xwalk-site/redirects.json:/redirects.json",
-    "/content/xsc-xwalk-site/configuration.json:/configuration.json"
+    "/content/martinelli-ginetto/:/",
+    "/content/martinelli-ginetto/metadata.json:/metadata.json",
+    "/content/martinelli-ginetto/redirects.json:/redirects.json",
+    "/content/martinelli-ginetto/configuration.json:/configuration.json"
   ]
 }
